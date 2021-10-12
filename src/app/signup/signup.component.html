@@ -1,0 +1,25 @@
+<div  *ngIf="!userRegistered ; else thankyou" style="width: 50%; margin:auto">
+<div class="container-xxl" >
+<form>
+    <div class="mb-3">
+        <label for="exampleInputName1" class="form-label">Name</label>
+        <input name="Name" [(ngModel)]="userInput.name" type="name" class="form-control" id="exampleInputEmail1" aria-describedby="NameHelp">
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input name="Email" [(ngModel)]="userInput.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" name="Password"  [(ngModel)]="userInput.password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="signIn()">Submit</button>
+  </form>
+</div>
+</div>
+<ng-template #thankyou>
+  <div>
+    <h1>Thank you for registeration. Kindly Check your inbox for verification E-Mail. Once User is verified you can login and explore our App!!</h1>
+  </div>
+</ng-template>

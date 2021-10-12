@@ -1,1 +1,55 @@
+<div class="container">
+    <div *ngIf="cartItems.length>0 && totalPrice>0; else emptycart" class="row">
+        <div class="col-9">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cake of cartItems;let i = index">
+                        <td><img style="height: 5em ; width: 5em;" [src]="cake.image"></td>
+                        <td>{{cake.name}}</td>
+                        <td>{{cake.price | currency}}</td>
+                        <td>
+                            <button (click)="increment(i)">
+                                <fa-icon [icon]="faPlus"></fa-icon>
+                            </button>
+                            <span>{{cake.quantity}}</span>
+                            <button (click)="decrement(i)" [disabled]="cake.quantity==1">
+                                <fa-icon [icon]="faMinus"></fa-icon>
+                            </button>
+                        </td>
+                        <td>
+                            <button (click)="removeCartItem(i)" class="btn btn-danger">
+                                <fa-icon [icon]="faTrash"></fa-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3">
+            <div class="Summary">
+            <h4>Summary</h4>
+            <hr/>
+            Total Price :
+            <h3 style="font-weight: bold;">{{totalPrice |currency }}</h3> 
+            <br>
+            <button (click)="checkout()" class="btn btn-warning">Checkout</button>
+            </div>
+        </div>
 
+    </div>
+
+
+    <ng-template #emptycart>
+        <div>
+            <h1>Your Cart is Empty!!!</h1>
+        </div>
+    </ng-template>
+</div>

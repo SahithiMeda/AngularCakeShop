@@ -1,0 +1,7 @@
+<div appZoomHighlight [routerLink]="['/cake',cake.cakeid]" class="card mt-3 zoom" style="width: 18rem;">
+    <img style="height: 16rem;" [src]="cake.image" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{cake.name}}</h5>
+      <p class="card-text">{{cake.price | currency}}</p>
+    </div>
+  </div>

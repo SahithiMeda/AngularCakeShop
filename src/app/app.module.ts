@@ -5,32 +5,55 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { CountryComponent } from './country/country.component';
+import { CakeComponent } from './cake/cake.component';
 import { HomeComponent } from './home/home.component';
-import { CountryBlogComponent } from './country-blog/country-blog.component';
-import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
-
+import {NgxUiLoaderModule} from 'ngx-ui-loader';
+import { CakeDetailsComponent } from './cake-details/cake-details.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SearchComponent } from './search/search.component';
+import { FormaterPipe } from './formater.pipe';
+import { ZoomHighlightDirective } from './zoom-highlight.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { CartSummaryComponent } from './cart-summary/cart-summary.component';
+import { AddressComponent } from './address/address.component';
+import { PaymentComponent } from './payment/payment.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { AddressFormaterPipe } from './address-formater.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     CarouselComponent,
-    CountryComponent,
+    CakeComponent,
     HomeComponent,
-    CountryBlogComponent,
-    SigninComponent,
+    SignupComponent,
     CartComponent,
-    LoginComponent
+    LoginComponent,
+    CakeDetailsComponent,
+    SearchComponent,
+    FormaterPipe,
+    ZoomHighlightDirective,
+    PageNotFoundComponent,
+    CheckoutComponent,
+    CartSummaryComponent,
+    AddressComponent,
+    PaymentComponent,
+    OrderSummaryComponent,
+    AddressFormaterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

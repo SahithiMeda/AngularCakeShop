@@ -1,5 +1,8 @@
-<div class="container-xxl">
-    <form>
+<div class="container centered">
+  <h2 style="text-align: center">Login Here</h2>
+  <div style="color:red; text-align: center" *ngIf="InvalidLogin">
+    <label>{{InvalidLogin}}</label>
+</div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input name="Email" [(ngModel)]="userInput.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -9,6 +12,9 @@
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" name="Password"  [(ngModel)]="userInput.password" class="form-control" id="exampleInputPassword1">
         </div>
-        <button type="submit" class="btn btn-primary" (click)="signUp()">Submit</button>
-      </form>
+        <div>
+          <a routerLink="/signup">New User? Signup Here</a>
+          <a style="float: right;" routerLink="/forgot">Forgot Password? Recover Here</a>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
     </div>

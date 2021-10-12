@@ -1,0 +1,7 @@
+.centered {
+    justify-content: center;
+    margin: auto;
+    width: 60%;
+    border: 3px solid blanchedalmond;
+    padding: 10px;
+  }

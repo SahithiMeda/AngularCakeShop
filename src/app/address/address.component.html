@@ -1,0 +1,43 @@
+<div class="container" style="width:50%">
+    <form #addressform="ngForm"  (submit)="addressform.valid && addAddress()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input [(ngModel)]="userAddress.name" minlength="5" name="name" #name="ngModel" required   type="email" class="form-control"  aria-describedby="emailHelp">
+            <div style="color:red" *ngIf="name.errors && addressform.submitted">
+                <div *ngIf="name.errors.required">Name is Required</div>
+                <div *ngIf="name.errors.minlength">Name must be of minimum 5 characters </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input [(ngModel)]="userAddress.address"  name="address" #address="ngModel" required   type="text" class="form-control"  aria-describedby="emailHelp">
+            <div style="color:red" *ngIf="address.errors && addressform.submitted">
+                <div *ngIf="address.errors.required">Address is Required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input [(ngModel)]="userAddress.city"  name="city" #city="ngModel" required   type="text" class="form-control"  aria-describedby="emailHelp">
+            <div style="color:red" *ngIf="city.errors && addressform.submitted">
+                <div *ngIf="city.errors.required">City is Required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="pincode" class="form-label">Pincode</label>
+            <input [(ngModel)]="userAddress.pincode"  name="pincode" #pincode="ngModel" required   type="text" class="form-control"  aria-describedby="emailHelp">
+            <div style="color:red" *ngIf="pincode.errors && addressform.submitted">
+                <div *ngIf="pincode.errors.required">Pincode is Required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input [(ngModel)]="userAddress.phone"  name="phone" #phone="ngModel" required   type="text" class="form-control"  aria-describedby="emailHelp">
+            <div style="color:red" *ngIf="phone.errors && addressform.submitted">
+                <div *ngIf="phone.errors.required">Phone is Required</div>
+            </div>
+        </div>
+       
+        <button class="btn btn-primary">Add Address</button>
+    </form>
+    </div>
+    

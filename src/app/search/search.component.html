@@ -1,0 +1,6 @@
+<div class="container">
+    <h1>{{cakes.length}} cakes found !! </h1>
+    <div class="row">
+        <app-cake class="col-md-3" style="margin-right: 3em;" *ngFor="let cake of cakes" [cake]="cake" ></app-cake>
+    </div>
+  </div>

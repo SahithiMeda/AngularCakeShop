@@ -1,0 +1,14 @@
+.container{
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    border: 3px solid rgb(27, 25, 22);
+    padding: 10px;
+}
+.col-3{
+    border-left: 3px solid rgb(22, 24, 22);
+    position: relative;
+    text-align: center;
+    align-self: center;
+    height:auto;
+  }
