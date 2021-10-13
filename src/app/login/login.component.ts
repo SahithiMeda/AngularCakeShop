@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { EmailValidatorService } from '../email-validator.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
  
   }
   InvalidLogin: string | undefined;
-   constructor(private http:HttpClient,private validator :EmailValidatorService) { 
+   constructor(private http:HttpClient,private validator :EmailValidatorService,private router:Router ){ 
      this.userInput.email="";
      this.userInput.password="";
    }
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
         localStorage.email = response.email
         localStorage.token = response.token
         this.InvalidLogin=""
+        this.router.navigate(['/']);
       console.log('user logged in')
       }
       else{

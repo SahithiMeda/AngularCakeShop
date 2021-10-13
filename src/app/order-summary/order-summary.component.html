@@ -1,4 +1,6 @@
 <div class="container">
+    <h2>Thank you for ordering ({{orderId}})</h2>
+    <br>
     <div class="row">
         <div class="col-9">
             <table class="table">
@@ -14,7 +16,7 @@
                     <tr *ngFor="let cake of cartItems;let i = index">
                         <td><img style="height: 5em ; width: 5em;" [src]="cake.image"></td>
                         <td>{{cake.name}}</td>
-                        <td>{{cake.price | currency}}</td>
+                        <td>{{cake.price | currency}:'INR'}</td>
                         <td> {{cake.quantity}}</td>
                     </tr>
                 </tbody>
@@ -24,7 +26,7 @@
             <div class="Summary">
                 <hr />
                 Total Price :
-                <span style="font-weight: bold;">{{totalPrice |currency }}</span>
+                <span style="font-weight: bold;">{{totalPrice |currency :'INR'}}</span>
             </div>
         </div>
         <hr />

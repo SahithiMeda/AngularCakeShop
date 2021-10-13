@@ -9,5 +9,6 @@ export class ShareDataService {
   address:any
   cakes:any
   totalPrice:any
+  orderId:any
 
 }

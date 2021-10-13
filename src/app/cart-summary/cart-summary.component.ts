@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShareDataService } from '../share-data.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class CartSummaryComponent implements OnInit {
 
   cartItems: any = [];
   totalPrice: number = 0;
-  constructor(private dataService: ShareDataService) {
+  constructor(private dataService: ShareDataService,private route:Router) {
+    if(!dataService.totalPrice){
+     this.route.navigate(['/cart'])
+    }
     this.cartItems = dataService.cakes;
     this.totalPrice = dataService.totalPrice;
   }

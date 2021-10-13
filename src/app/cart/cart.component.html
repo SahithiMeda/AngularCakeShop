@@ -8,13 +8,14 @@
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
+                        <th scope="col">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let cake of cartItems;let i = index">
                         <td><img style="height: 5em ; width: 5em;" [src]="cake.image"></td>
                         <td>{{cake.name}}</td>
-                        <td>{{cake.price | currency}}</td>
+                        <td>{{cake.price | currency:'INR'}}</td>
                         <td>
                             <button (click)="increment(i)">
                                 <fa-icon [icon]="faPlus"></fa-icon>
@@ -38,7 +39,7 @@
             <h4>Summary</h4>
             <hr/>
             Total Price :
-            <h3 style="font-weight: bold;">{{totalPrice |currency }}</h3> 
+            <h3 style="font-weight: bold;">{{totalPrice |currency:'INR' }}</h3> 
             <br>
             <button (click)="checkout()" class="btn btn-warning">Checkout</button>
             </div>
